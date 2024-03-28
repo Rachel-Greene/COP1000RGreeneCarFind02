@@ -17,7 +17,7 @@ def checkValidInputFX(testInputNum):
 
 def checkVehicleFX(testInputVehicle):
   if testInputVehicle in carMakes:
-    return testInputVehicle
+    print(f"\n{testInputVehicle} is an authorized vehicle")
   else:
     print(f"""
     {testInputVehicle} is not an authorized vehicle, if you recieved this in error please check the spelling and try again.
@@ -50,7 +50,7 @@ if validChoiceInput == 1:
   print(f"{choice1Message}")
   for a in range(0,5):
     print(carMakes[a])
-if validChoiceInput == 2:
+elif validChoiceInput == 2:
   print("""
     ***********************************
     Please enter the full vehicle name:
@@ -58,4 +58,3 @@ if validChoiceInput == 2:
     """)
   customerVehicleInput = input()
   validVehicleInput = checkVehicleFX(customerVehicleInput)
-  print(f"\n{validVehicleInput} is an authorized vehicle")
