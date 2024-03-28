@@ -1,9 +1,14 @@
-## This is the program to run the AutoCountry Vehicle Finder app, version 0.1 ##
+## This is the program to run the AutoCountry Vehicle Finder app, version 0.2 ##
 
 ## ------------------------------ Functions ------------------------------ ##
+# F(x) to check which choice inputted, validate choice #
 def checkValidInputFX(testInputNum):
-  if testInputNum == "1" or testInputNum == "2":
-    return int(testInputNum)
+  if testInputNum == "1":
+    print(f"{choice1Message}")
+    for a in range(0,5):
+      print(carMakes[a])
+  elif testInputNum == "2":
+    return True
   elif testInputNum == "3":
     print("\nThank you for using AutoCountry Car Finder, good-bye!")
     exit()
@@ -14,7 +19,7 @@ def checkValidInputFX(testInputNum):
     """)
     exit()
 
-
+# F(x) to check authorization of vehicle #
 def checkVehicleFX(testInputVehicle):
   if testInputVehicle in carMakes:
     print(f"\n{testInputVehicle} is an authorized vehicle")
@@ -28,7 +33,7 @@ def checkVehicleFX(testInputVehicle):
 carMakes = ["Ford F-150", "Chevrolet Silverado", "Tesla CyberTruck", "Toyota Tundra", "Nissan Titan"]
 welcomeMessage = """
   ********************************
-  AutoCountry Vehicle Finder v0.1
+  AutoCountry Vehicle Finder v0.2
   ********************************
   Please enter the following number from the following menu:
    \n
@@ -37,24 +42,19 @@ welcomeMessage = """
     3. Exit
 """
 choice1Message = "\nThe AutoCountry sales manages has authorized the purchase and selling of the following vehicles: "
+choice2Message = """
+  ***********************************
+  Please enter the full vehicle name:
+  ***********************************
+"""
 
 
-## --------------------- Customer input, Validation --------------------- ##
+## --------------------- Customer facing, functions, output --------------------- ##
 print(welcomeMessage)
 customerChoiceInput = input()
 validChoiceInput = checkValidInputFX(customerChoiceInput)
 
-
-## ----------------------- Logic, Customer Output ----------------------- ##
-if validChoiceInput == 1:
-  print(f"{choice1Message}")
-  for a in range(0,5):
-    print(carMakes[a])
-elif validChoiceInput == 2:
-  print("""
-    ***********************************
-    Please enter the full vehicle name:
-    ***********************************
-    """)
+if validChoiceInput == True:
+  print(choice2Message)
   customerVehicleInput = input()
   validVehicleInput = checkVehicleFX(customerVehicleInput)
