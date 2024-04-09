@@ -4,9 +4,9 @@
 # F(x) to check which choice inputted, validate choice #
 def checkValidInputFX(testInputNum):
   if testInputNum == "1":
-    print(f"{choice1Message}")
-    for a in range(0,5):
-      print(carMakes[a])
+    #print(f"{choice1Message}")
+    #for a in range(0,5):
+      #print(carMakes[a])
   elif testInputNum == "2":
     return True
   elif testInputNum == "3":
@@ -30,7 +30,6 @@ def checkVehicleFX(testInputVehicle):
 
 
 ## --------------------------- Declerations ---------------------------- ##
-carMakes = ["Ford F-150", "Chevrolet Silverado", "Tesla CyberTruck", "Toyota Tundra", "Nissan Titan"]
 welcomeMessage = """
   ********************************
   AutoCountry Vehicle Finder v0.2
@@ -39,7 +38,8 @@ welcomeMessage = """
    \n
     1. PRINT all Authorized Vehicles
     2. SEARCH for Authorized Vehicle
-    3. Exit
+    3. 
+    4. Exit
 """
 choice1Message = "\nThe AutoCountry sales manages has authorized the purchase and selling of the following vehicles: "
 choice2Message = """
